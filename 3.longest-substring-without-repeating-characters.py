@@ -15,6 +15,7 @@ class Solution:
         ans = 0
         for j, ch in enumerate(s):
             if ch in letterDict:
+                # 重复的字符可能在i的左边，这时候忽视，i不动
                 i = max(i, letterDict[ch] + 1)
             letterDict[ch] = j
             ans = max(ans, j - i + 1)
